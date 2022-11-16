@@ -11,7 +11,10 @@ import SafeTokenWidget, { getSafeTokenAddress } from '@/components/common/SafeTo
 import NotificationCenter from '@/components/notification-center/NotificationCenter'
 import { AppRoutes } from '@/config/routes'
 import useChainId from '@/hooks/useChainId'
-import SafeLogo from '@/public/images/logo.svg'
+// import SafeLogo from '@/public/images/logo.svg'
+import SafeLogoMBEAM from '@/public/images/moonbeam_logo.svg'
+import SafeLogoMVR from '@/public/images/moonriver_logo.svg'
+import SafeLogoMBASE from '@/public/images/moonbase_logo.svg'
 import Link from 'next/link'
 import useSafeAddress from '@/hooks/useSafeAddress'
 
@@ -39,7 +42,13 @@ const Header = ({ onMenuToggle }: HeaderProps): ReactElement => {
       <div className={classnames(css.element, css.hideMobile, css.logo)}>
         <Link href={logoHref} passHref>
           <a>
-            <SafeLogo alt="Safe logo" />
+            {chainId == '1285' ? (
+              <SafeLogoMVR alt="Safe logo" />
+            ) : chainId == '1284' ? (
+              <SafeLogoMBEAM alt="Safe logo" />
+            ) : (
+              <SafeLogoMBASE alt="Safe logo" />
+            )}
           </a>
         </Link>
       </div>

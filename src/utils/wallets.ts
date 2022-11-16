@@ -1,6 +1,6 @@
 import { ProviderLabel } from '@web3-onboard/injected-wallets'
-import { hasStoredPairingSession } from '@/services/pairing/connector'
-import { PAIRING_MODULE_LABEL } from '@/services/pairing/module'
+// import { hasStoredPairingSession } from '@/services/pairing/connector'
+// import { PAIRING_MODULE_LABEL } from '@/services/pairing/module'
 import { E2E_WALLET_NAME } from '@/tests/e2e-wallet'
 import type { EthersError } from '@/utils/ethers-utils'
 import { ErrorCode } from '@ethersproject/logger'
@@ -20,7 +20,7 @@ export const isWalletRejection = (err: EthersError): boolean => {
 export const WalletNames = {
   METAMASK: ProviderLabel.MetaMask,
   WALLET_CONNECT: 'WalletConnect',
-  SAFE_MOBILE_PAIRING: PAIRING_MODULE_LABEL,
+  // SAFE_MOBILE_PAIRING: PAIRING_MODULE_LABEL,
 }
 
 /* Check if the wallet is unlocked. */
@@ -38,9 +38,9 @@ export const isWalletUnlocked = async (walletName: string): Promise<boolean> => 
   }
 
   // Our own Safe mobile pairing module
-  if (walletName === WalletNames.SAFE_MOBILE_PAIRING && hasStoredPairingSession()) {
-    return hasStoredPairingSession()
-  }
+  // if (walletName === WalletNames.SAFE_MOBILE_PAIRING && hasStoredPairingSession()) {
+  //   return hasStoredPairingSession()
+  // }
 
   if (walletName === E2E_WALLET_NAME) {
     return Boolean(window.Cypress)

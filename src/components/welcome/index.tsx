@@ -10,10 +10,10 @@ const NewSafe = () => {
   return (
     <>
       <Typography variant="h1" mb={2}>
-        Welcome to the Safe.
+        Welcome to Moonbeam Safe.
       </Typography>
       <Typography variant="h4" mb={2}>
-        Safe is the most trusted platform to manage digital assets.
+        Moonbeam Safe is the most trusted platform to manage digital assets.
         <br />
         Here is how to get started:
       </Typography>

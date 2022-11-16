@@ -6,7 +6,7 @@ const Welcome: NextPage = () => {
   return (
     <main>
       <Head>
-        <title>Safe – Welcome</title>
+        <title>Moonbeam Safe – Welcome</title>
       </Head>
 
       <NewSafe />
