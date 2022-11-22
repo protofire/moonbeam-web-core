@@ -12,8 +12,26 @@ const CHAIN_PREFIXES: Record<string, string> = {
   '246': 'ENERGY_WEB_CHAIN',
   '42161': 'ARBITRUM',
   '73799': 'VOLTA',
+  '1284': 'MOONBEAM',
+  '1285': 'MOONRIVER',
+  '1287': 'MOONBASE',
 }
-const ALL_CHAINS = ['1', '100', '137', '56', '246', '42161', '1313161554', '43114', '10', '5', '73799']
+const ALL_CHAINS = [
+  '1',
+  '100',
+  '137',
+  '56',
+  '246',
+  '42161',
+  '1313161554',
+  '43114',
+  '10',
+  '5',
+  '73799',
+  '1284',
+  '1285',
+  '1287',
+]
 
 const OLD_LS_KEY = '__SAFES'
 

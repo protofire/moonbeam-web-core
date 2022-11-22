@@ -20,11 +20,13 @@ const useStorageMigration = (): void => {
     const unmount = createMigrationBus((lsData: LOCAL_STORAGE_DATA) => {
       const abData = migrateAddressBook(lsData)
       if (abData) {
+        console.log('abData: ', abData)
         dispatch(addressBookSlice.actions.migrate(abData))
       }
 
       const addedSafesData = migrateAddedSafes(lsData)
       if (addedSafesData) {
+        console.log('addedSafesData: ', addedSafesData)
         dispatch(addedSafesSlice.actions.migrate(addedSafesData))
       }
 
