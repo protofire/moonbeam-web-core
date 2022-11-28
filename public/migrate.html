@@ -2,7 +2,7 @@
 <script>
   ;(function () {
     const allowedOrigins = [
-        'https://new.staging.multisig.moonbeam.network'
+        'https://test.staging.multisig.moonbeam.network/'
     ]
     // Send the entire localStorage if the origin is allowed
     window.addEventListener('message', function (event) {
@@ -18,3 +18,10 @@
     })
   })()
 </script>
+
+//1 step
+// create www.test.staging... (safe-react)
+// add some  local storage
+
+//on web-core config allowdomaind need to be www.test.staging
+// point www.test.staging to (web-core)
