@@ -21,16 +21,12 @@ const isMigrationMessage = (message: any): message is MigrationMessage => {
 const createMigrationBus = (onMessage: (message: LOCAL_STORAGE_DATA) => void): (() => void) => {
   // Create iframe
   const iframe = createIframe(`${IFRAME_HOST}${IFRAME_PATH}`)
-  console.log('Creating iFrame and subscribing to messages')
 
   // Subscribe to the message from iframe
   const unsubscribe = receiveMessage((message) => {
-    console.log('Received message from iFrame')
     if (isMigrationMessage(message)) {
-      console.log('isMigrationMessage = true')
       onMessage(message.payload)
     } else {
-      console.log('isMigrationMessage = false')
     }
   }, IFRAME_HOST)
 
