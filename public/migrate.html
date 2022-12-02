@@ -6,7 +6,10 @@
     ]
     // Send the entire localStorage if the origin is allowed
     window.addEventListener('message', function (event) {
+      console.log("Event received ", event)
+      console.log("Event origin ", event.origin)
       if (allowedOrigins.includes(event.origin)) {
+        console.log("Sending local storage ", JSON.parse(JSON.stringify(localStorage)))
         event.source.postMessage(
           {
             type: 'migration-data',
@@ -18,10 +21,3 @@
     })
   })()
 </script>
-
-//1 step
-// create www.test.staging... (safe-react)
-// add some  local storage
-
-//on web-core config allowdomaind need to be www.test.staging
-// point www.test.staging to (web-core)
