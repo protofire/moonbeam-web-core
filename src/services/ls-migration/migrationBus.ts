@@ -21,6 +21,7 @@ const isMigrationMessage = (message: any): message is MigrationMessage => {
 const createMigrationBus = (onMessage: (message: LOCAL_STORAGE_DATA) => void): (() => void) => {
   // Create iframe
   const iframe = createIframe(`${IFRAME_HOST}${IFRAME_PATH}`)
+  console.log("Creating iFrame")
 
   // Subscribe to the message from iframe
   const unsubscribe = receiveMessage((message) => {
