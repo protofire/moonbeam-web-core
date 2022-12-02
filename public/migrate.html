@@ -7,7 +7,6 @@
     // Send the entire localStorage if the origin is allowed
     window.addEventListener('message', function (event) {
       if (allowedOrigins.includes(event.origin)) {
-        console.log('Sending local storage ', JSON.parse(JSON.stringify(localStorage)))
         event.source.postMessage(
           {
             type: 'migration-data',
