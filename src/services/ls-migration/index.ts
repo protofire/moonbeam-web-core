@@ -13,14 +13,14 @@ import { MIGRATION_KEY } from './config'
 const useStorageMigration = (): void => {
   const dispatch = useAppDispatch()
   const [isMigrationFinished = false, setIsMigrationFinished] = useLocalStorage<boolean>(MIGRATION_KEY)
-  console.log("Start Storage Migration")
+  console.log('Start Storage Migration')
 
   useEffect(() => {
     if (isMigrationFinished) return
 
-    console.log("Opening Migration channel")
+    console.log('Opening Migration channel')
     const unmount = createMigrationBus((lsData: LOCAL_STORAGE_DATA) => {
-      console.log("Receive lsData: ", lsData)
+      console.log('Receive lsData: ', lsData)
       const abData = migrateAddressBook(lsData)
       if (abData) {
         console.log('abData: ', abData)
