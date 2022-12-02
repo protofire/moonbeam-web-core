@@ -27,6 +27,8 @@ export const sendReadyMessage = (iframe: HTMLIFrameElement, targetOrigin: string
  */
 export const receiveMessage = (callback: (message: any) => void, trustedOrigin: string) => {
   const onMessage = (event: MessageEvent) => {
+    console.log('event.origin = ', event.origin)
+    console.log('trustedOrigin = ', trustedOrigin)
     if (event.origin !== trustedOrigin) return
     callback(event.data)
   }
